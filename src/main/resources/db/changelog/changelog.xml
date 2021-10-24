@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<changeSet author="kzyskowski" id="1634931229569-1">
+		<createTable tableName="actor">
+			<column defaultValueNumeric="0" name="id" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValue="NULL" name="first_name" type="VARCHAR(100)" />
+			<column defaultValue="NULL" name="last_name" type="VARCHAR(100)" />
+			<column defaultValue="NULL" name="gender" type="CHAR(1)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-2">
+		<createTable tableName="director">
+			<column defaultValueNumeric="0" name="id" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValue="NULL" name="first_name" type="VARCHAR(100)" />
+			<column defaultValue="NULL" name="last_name" type="VARCHAR(100)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-3">
+		<createTable tableName="director_genre">
+			<column defaultValueNumeric="0" name="id" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValueComputed="NULL" name="director_id" type="INT" />
+			<column defaultValue="NULL" name="genre" type="VARCHAR(100)" />
+			<column defaultValueComputed="NULL" name="prob" type="FLOAT(12)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-4">
+		<createTable tableName="movie">
+			<column defaultValueNumeric="0" name="id" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValue="NULL" name="name" type="VARCHAR(100)" />
+			<column defaultValueComputed="NULL" name="year" type="INT" />
+			<column defaultValueComputed="NULL" name="rank" type="FLOAT(12)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-5">
+		<createTable tableName="movie_director">
+			<column defaultValueComputed="NULL" name="director_id" type="INT" />
+			<column defaultValueComputed="NULL" name="movie_id" type="INT" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-6">
+		<createTable tableName="movie_genre">
+			<column defaultValueNumeric="0" name="id" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValueComputed="NULL" name="movie_id" type="INT" />
+			<column defaultValue="NULL" name="genre" type="VARCHAR(100)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-7">
+		<createTable tableName="role">
+			<column defaultValueComputed="NULL" name="actor_id" type="INT" />
+			<column defaultValueComputed="NULL" name="movie_id" type="INT" />
+			<column defaultValue="NULL" name="role" type="VARCHAR(100)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-8">
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="actor" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-9">
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="director" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-10">
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="movie" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="director_genre_pk">
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="director_genre" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="movie_genre_pk">
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="movie_genre" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-11">
+		<createIndex indexName="idx_actor_id" tableName="role">
+			<column name="actor_id" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-12">
+		<createIndex indexName="idx_director_id" tableName="director_genre">
+			<column name="director_id" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-13">
+		<createIndex indexName="idx_director_id" tableName="movie_director">
+			<column name="director_id" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-14">
+		<createIndex indexName="idx_first_name" tableName="actor">
+			<column name="first_name" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-15">
+		<createIndex indexName="idx_first_name" tableName="director">
+			<column name="first_name" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-16">
+		<createIndex indexName="idx_genre" tableName="director_genre">
+			<column name="genre" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-17">
+		<createIndex indexName="idx_last_name" tableName="actor">
+			<column name="last_name" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-18">
+		<createIndex indexName="idx_last_name" tableName="director">
+			<column name="last_name" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-19">
+		<createIndex indexName="idx_movie_id" tableName="movie_director">
+			<column name="movie_id" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-20">
+		<createIndex indexName="idx_movie_id" tableName="role">
+			<column name="movie_id" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-21">
+		<createIndex indexName="idx_name" tableName="movie">
+			<column name="name" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="1634931229569-22">
+		<createIndex indexName="idx_role" tableName="role">
+			<column name="role" />
+		</createIndex>
+	</changeSet>
+	<changeSet author="kzyskowski" id="Create sequence actor_seq">
+		<createSequence sequenceName="actor_seq" startValue="845500" incrementBy="50" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="Create sequence director_seq">
+		<createSequence sequenceName="director_seq" startValue="88850" incrementBy="50" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="Create sequence movie_seq">
+		<createSequence sequenceName="movie_seq" startValue="412350" incrementBy="50" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="Create sequence director_genre_seq">
+		<createSequence sequenceName="director_genre_seq" startValue="200000" incrementBy="50" />
+	</changeSet>
+	<changeSet author="kzyskowski" id="Create sequence movie_genre_seq">
+		<createSequence sequenceName="movie_genre_seq" startValue="420000" incrementBy="50" />
+	</changeSet>
+</databaseChangeLog>
