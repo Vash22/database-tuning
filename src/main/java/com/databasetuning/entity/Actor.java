@@ -1,13 +1,9 @@
 package com.databasetuning.entity;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 import lombok.AllArgsConstructor;
@@ -32,8 +28,8 @@ public class Actor {
 	private String lastName;
 	private String gender;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "roleIdentity.actorId")
-	private Set<Role> roles;
+	//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "roleIdentity.actorId")
+	//	private Set<Role> roles;
 
 	public Actor(String firstName, String lastName, String gender) {
 		this.firstName = firstName;

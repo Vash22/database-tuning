@@ -1,0 +1,18 @@
+POST http://localhost:8086/query-tuning/persistence/noTransactionBySave
+Content-Type: application/json
+
+{}
+
+###
+POST http://localhost:8086/query-tuning/persistence/inTransactionBySave
+Content-Type: application/json
+
+{}
+
+###
+POST http://localhost:8086/query-tuning/persistence/inTransactionBySaveAll
+Content-Type: application/json
+
+{}
+
+###

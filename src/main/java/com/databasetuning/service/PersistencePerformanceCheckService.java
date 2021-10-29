@@ -23,4 +23,14 @@ public class PersistencePerformanceCheckService {
 	public void persistWithoutTransactionBySave(List<Actor> actors) {
 		actors.forEach(actorRepository::save);
 	}
+
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void persistWithTransactionBySave(List<Actor> actors) {
+		actors.forEach(actorRepository::save);
+	}
+
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void persistWithoutTransactionBySaveAll(List<Actor> actors) {
+		actorRepository.saveAll(actors);
+	}
 }
