@@ -1,16 +1,16 @@
-POST http://localhost:8086/query-tuning/persistence/noTransactionBySave
+POST http://localhost:8086/query-tuning/persistence/noTransaction
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:8086/query-tuning/persistence/inTransactionBySave
+POST http://localhost:8086/query-tuning/persistence/inTransaction
 Content-Type: application/json
 
 {}
 
 ###
-POST http://localhost:8086/query-tuning/persistence/inTransactionBySaveAll
+POST http://localhost:8086/query-tuning/persistence/inTransactionWithSequence
 Content-Type: application/json
 
 {}

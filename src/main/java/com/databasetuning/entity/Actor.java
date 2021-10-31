@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Actor {
 
 	@Id
-	@SequenceGenerator(name = "actor_seq", sequenceName = "actor_seq")
+	@SequenceGenerator(name = "actor_seq", sequenceName = "actor_seq", allocationSize = 50)
 	@GeneratedValue(generator = "actor_seq", strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String firstName;
