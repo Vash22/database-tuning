@@ -64,77 +64,77 @@
 		</createTable>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-8">
-		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="actor" />
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY_ACTOR" tableName="actor" />
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-9">
-		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="director" />
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY_DIRECTOR" tableName="director" />
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-10">
-		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="movie" />
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY_MOVIE" tableName="movie" />
 	</changeSet>
 	<changeSet author="kzyskowski" id="director_genre_pk">
-		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="director_genre" />
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY_DIRECTOR_GENRE" tableName="director_genre" />
 	</changeSet>
 	<changeSet author="kzyskowski" id="movie_genre_pk">
-		<addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="movie_genre" />
+		<addPrimaryKey columnNames="id" constraintName="PRIMARY_MOVIE_GENRE" tableName="movie_genre" />
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-11">
-		<createIndex indexName="idx_actor_id" tableName="role">
+		<createIndex indexName="role_i1" tableName="role">
 			<column name="actor_id" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-12">
-		<createIndex indexName="idx_director_id" tableName="director_genre">
+		<createIndex indexName="director_genre_i1" tableName="director_genre">
 			<column name="director_id" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-13">
-		<createIndex indexName="idx_director_id" tableName="movie_director">
+		<createIndex indexName="movie_director_i1" tableName="movie_director">
 			<column name="director_id" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-14">
-		<createIndex indexName="idx_first_name" tableName="actor">
+		<createIndex indexName="actor_i1" tableName="actor">
 			<column name="first_name" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-15">
-		<createIndex indexName="idx_first_name" tableName="director">
+		<createIndex indexName="director_i1" tableName="director">
 			<column name="first_name" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-16">
-		<createIndex indexName="idx_genre" tableName="director_genre">
+		<createIndex indexName="director_genre_i2" tableName="director_genre">
 			<column name="genre" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-17">
-		<createIndex indexName="idx_last_name" tableName="actor">
+		<createIndex indexName="actor_i2" tableName="actor">
 			<column name="last_name" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-18">
-		<createIndex indexName="idx_last_name" tableName="director">
+		<createIndex indexName="director_i3" tableName="director">
 			<column name="last_name" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-19">
-		<createIndex indexName="idx_movie_id" tableName="movie_director">
+		<createIndex indexName="movie_director_i2" tableName="movie_director">
 			<column name="movie_id" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-20">
-		<createIndex indexName="idx_movie_id" tableName="role">
+		<createIndex indexName="role_i2" tableName="role">
 			<column name="movie_id" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-21">
-		<createIndex indexName="idx_name" tableName="movie">
+		<createIndex indexName="movie_i1" tableName="movie">
 			<column name="name" />
 		</createIndex>
 	</changeSet>
 	<changeSet author="kzyskowski" id="1634931229569-22">
-		<createIndex indexName="idx_role" tableName="role">
+		<createIndex indexName="role_i3" tableName="role">
 			<column name="role" />
 		</createIndex>
 	</changeSet>
