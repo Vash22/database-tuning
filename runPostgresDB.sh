@@ -15,5 +15,5 @@ docker rmi "$(docker images -f "dangling=true" -q)" 2> /dev/null || true
 docker stop some-postgres 2> /dev/null || true
 docker rm some-postgres 2> /dev/null || true
 
-docker pull postgres
-docker run -d -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker pull postgres:14.0
+docker run -d -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres:14.0
